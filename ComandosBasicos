@@ -1,0 +1,31 @@
+"""
+Este programa en python dentro de Ubuntu que realiza la creacion de un archivo txt con nombre promedio,
+crea una carpeta llamada calificaciones y otra llamada 1erparcial,
+ademas mueve el archivo txt a la carpeta 1erparcial, tambien crea un archivo .py dentro de la carpeta de calificaiones,
+por ultimo importa el codigo de una calculadora basica 
+
+Autor:Quiroz Mora Raul Fernando
+"""
+import subprocess 
+
+def ejecutar(comando):
+    subprocess.run(comando,shell=True)
+
+    
+print (' Menu \n1) Crea un archivo txt\n2) Crear una carpeta llamada calificaciones\n3) Crea una carpeta llamada 1erparcial \n4) Mueve archivo promedio a 1erparcial \n5) Crea archivo Comando.py \n6) Ejecuta calculadora basica')
+opcion = input('Ingrese una opcion: ')
+if opcion == '1':
+    ejecutar(" touch promedio.txt")
+if opcion == '2':
+    ejecutar(" mkdir calificaciones")
+if opcion == '3':
+    ejecutar(" mkdir 1erParcial")
+if opcion == '4':
+    ejecutar('mv "promedio.txt" "1erParcial" ')
+if opcion == '5':
+    ejecutar(" touch comando.py")
+    ejecutar('mv "comando.py" "calificaciones"')
+if opcion == '6':
+    import calculadora#importamos la calculadora
+else:
+    print("Adios")
